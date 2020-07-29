@@ -18,6 +18,11 @@
             <a class="nav-item nav-link" href="">View Item </a>    
         </div>
     </nav>
+    {% if messages %}
+        {% for message in messages %}
+            {{message}}    
+        {% endfor %}
+    {% endif %}
 
     {% block body %}
     {% endblock %}
