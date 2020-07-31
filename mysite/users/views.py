@@ -1,11 +1,11 @@
 """views of users"""
-
-
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from .forms import RegisterForm
-# Create your views here.
+from django.contrib.auth.decorators import login_required
 
+
+# Create your views here.
 def register(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
@@ -17,3 +17,8 @@ def register(request):
     else:
         form = RegisterForm()
         return render(request, 'users/register.html', {'form': form})
+
+
+@login_required
+def profilepage(request):
+    return render(request, 'users/profile.html')
