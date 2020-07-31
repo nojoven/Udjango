@@ -20,7 +20,9 @@
     </nav>
     {% if messages %}
         {% for message in messages %}
-            {{message}}    
+            <div class="alert alert-{{ message.tags }}">
+                {{message}}
+            </div>    
         {% endfor %}
     {% endif %}
 
