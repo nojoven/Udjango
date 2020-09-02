@@ -1,9 +1,8 @@
-"""This file contains the forms"""
-
 from django import forms
-from . import models
+from .models import Item
 
-class  ItemForm(forms.ModelForm):
+
+class ItemForm(forms.ModelForm):
     class Meta:
-        model = models.Item
+        model = Item
         fields = ('item_name', 'item_desc', 'item_price', 'item_image')

@@ -1,0 +1,56 @@
+{% extends 'pdf/base.html' %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-7 offset-md-3">
+      <form method="POST">
+      {% csrf_token %}
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" name="name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" id="email" name="email">
+        </div>
+
+        <div class="form-group">
+          <label for="summary">About you</label>
+            <textarea type="text" class="form-control" id="summary" rows="3" name="summary"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="degree">Degree</label>
+          <input type="text" class="form-control" id="degree" name="degree">
+        </div>
+
+        <div class="form-group">
+          <label for="school">School</label>
+          <input type="text" class="form-control" id="school" name="school">
+        </div>
+
+        <div class="form-group">
+          <label for="university">University</label>
+          <input type="text" class="form-control" id="university" name="university">
+        </div>
+
+        <div class="form-group">
+          <label for="previous_work">Previous_work</label>
+            <textarea type="text" class="form-control" id="previous_work" rows="3" name="previous_work"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="skills">Skills</label>
+            <textarea type="text" class="form-control" id="skills" rows="3" name="skills"></textarea>
+        </div>
+        <center>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </center>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
